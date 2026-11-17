@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>allie.py 🌿</title>
+<title>for allie 🌷</title>
 <meta name="theme-color" content="#070d0a">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌼</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,50 +58,14 @@
 
   /* ascii canvases */
   .bq { position: relative; height: clamp(360px, min(74vh, 118vw), 680px); background: #050907; }
-  .field { position: relative; height: clamp(400px, 64vh, 560px); background: #050907; }
-  .bq canvas, .field canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: pan-y; cursor: pointer; outline: none;
+  .bq canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: pan-y; cursor: pointer; outline: none;
                               filter: drop-shadow(0 0 2.5px rgba(255, 255, 255, .22)); }
   .foot { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 10px 16px; border-top: 1px solid var(--line); background: var(--panel2); }
   #bqline { color: #fff; min-height: 1.6em; }
   #bqline::after { content: '_'; color: var(--green); animation: blink 1s steps(1) infinite; }
   .for { color: var(--pink); white-space: nowrap; font-size: 12px; }
-  .fhint { position: absolute; left: 0; right: 0; bottom: 8px; text-align: center; color: rgba(216, 232, 221, .5); font-size: 11.5px; pointer-events: none; padding: 0 12px; }
-  #toast { position: absolute; left: 12px; right: 12px; top: 12px; max-width: 460px; padding: 10px 14px; border-radius: 10px;
-           background: rgba(5, 12, 8, .88); border: 1px solid rgba(74, 222, 128, .35); opacity: 0; transform: translateY(-8px);
-           transition: opacity .3s, transform .3s; pointer-events: none; }
-  #toast.show { opacity: 1; transform: none; }
-  #toast .p { color: var(--muted); } #toast .s { color: var(--yellow); }
 
-  /* code editor */
-  .editor { display: flex; overflow: auto; max-height: min(560px, 52vh); cursor: pointer; font-size: 13px; }
-  .gutter { padding: 16px 12px 16px 16px; text-align: right; color: #2f4a3c; user-select: none; white-space: pre; }
-  pre { margin: 0; padding: 16px 20px 16px 4px; flex: 1; }
-  code { font-family: var(--mono); white-space: pre; }
-  .k { color: var(--green); font-weight: 600; } .s { color: var(--yellow); } .c { color: var(--muted); font-style: italic; }
-  .se { color: #f9a8d4; } .b { color: var(--blue); } .n { color: var(--orange); } .f { color: var(--lime); }
-  .caret { display: inline-block; width: 8px; height: 1.15em; vertical-align: -3px; background: var(--green); animation: blink 1s steps(1) infinite; }
   @keyframes blink { 50% { opacity: 0; } }
-  .runrow { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-top: 1px solid var(--line); background: var(--panel2); }
-  .runrow .hint { color: var(--muted); font-size: 12px; }
-  .btn { border: 1px solid var(--line); background: #0f2219; color: var(--green); padding: 7px 12px; border-radius: 10px; cursor: pointer; white-space: nowrap; font-size: 13px; transition: transform .15s, background .2s, box-shadow .2s; }
-  .btn:hover { background: #133022; box-shadow: 0 0 20px rgba(74, 222, 128, .25); }
-  .btn:active { transform: scale(.96); }
-  .btn.primary { background: var(--green); color: #052e16; border-color: var(--green); font-weight: 600; padding: 9px 16px; font-size: 14px; }
-  .btn.pulse { animation: pulse 1.6s ease-in-out infinite; }
-  @keyframes pulse { 50% { box-shadow: 0 0 0 8px rgba(74, 222, 128, .15), 0 0 30px rgba(74, 222, 128, .4); } }
-  .actions, .chips { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--line); background: var(--panel2); overflow-x: auto; scrollbar-width: none; }
-  .actions::-webkit-scrollbar, .chips::-webkit-scrollbar { display: none; }
-
-  /* terminal */
-  #out { padding: 14px 16px 4px; height: 340px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; }
-  #out .in { color: var(--text); } #out .in::before { content: '>>> '; color: var(--green); }
-  #out .o { color: #b9d3c3; } #out .str { color: var(--yellow); } #out .err { color: #fb7185; } #out .dim { color: var(--muted); } #out .ok { color: var(--green); }
-  .prompt { display: flex; align-items: center; gap: 8px; padding: 6px 16px 14px; }
-  .prompt span { color: var(--green); }
-  #cmd { flex: 1; min-width: 0; background: transparent; border: 0; outline: 0; color: var(--text); font: inherit; font-size: 16px; caret-color: var(--green); }
-  .chip { white-space: nowrap; border: 1px solid var(--line); background: transparent; color: var(--lime); padding: 6px 11px; border-radius: 999px; cursor: pointer; font-size: 12.5px; }
-  .chip:hover { border-color: var(--green); color: var(--green); }
-
 
   .status { display: flex; gap: 16px; align-items: center; padding: 6px 16px; background: #14532d; color: #dcfce7; font-size: 12px; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
   .status::-webkit-scrollbar { display: none; }
@@ -115,15 +79,12 @@
 <header class="topbar">
   <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="path">~/<b>allie</b></div>
-  <nav aria-label="Sections">
-    <a href="#bouquet">bouquet3d.py</a><a href="#code">allie.py</a><a href="#garden">garden.py</a><a href="#terminal">terminal</a>
-  </nav>
 </header>
 
 <main>
   <div class="hero">
     <h1>hi <span class="g">allie</span> 🌿</h1>
-    <p># I wrote you some programs. play with all of them.</p>
+    <p># I made you a bouquet. tap the flowers 🌷</p>
   </div>
 
   <section class="win" id="bouquet">
@@ -131,41 +92,10 @@
     <div class="bq"><canvas id="bq" tabindex="0" aria-label="A spinning 3D bouquet drawn in text characters. Tap a flower, or press Enter, for a message. Drag sideways to spin it."></canvas></div>
     <div class="foot"><span id="bqline" aria-live="polite"></span><span class="for">for allie ♥</span></div>
   </section>
-
-  <section class="win" id="code">
-    <div class="wbar"><div class="tab"><span class="ic">●</span>allie.py</div><span class="meta">python 3.12 · utf-8</span></div>
-    <div class="editor" id="editor" title="tap to skip typing"><div class="gutter" id="gutter" aria-hidden="true"></div><pre><code id="src"></code></pre></div>
-    <div class="runrow"><button class="btn primary" id="run">▶ run allie.py</button><span class="hint" id="runhint">typing…</span></div>
-  </section>
-
-  <section class="win" id="garden">
-    <div class="wbar"><div class="tab"><span class="ic">✿</span>garden.py</div><span class="meta" id="gstats">flowers: 0 · picked: 0</span></div>
-    <div class="field">
-      <canvas id="field" aria-label="A wildflower meadow drawn in text characters. Tap to plant flowers, drag sideways for wind, tap a flower to pick it."></canvas>
-      <div id="toast" role="status" aria-live="polite"></div>
-      <div class="fhint">tap to plant · drag sideways for wind · tap a flower to pick it</div>
-    </div>
-    <div class="actions">
-      <button class="btn" data-cmd="plant(15)">plant(15)</button>
-      <button class="btn" data-cmd="wind()">wind()</button>
-      <button class="btn" data-cmd="pick()">pick()</button>
-      <button class="btn" data-cmd="clear_garden()">clear_garden()</button>
-    </div>
-  </section>
-
-  <section class="win" id="terminal">
-    <div class="wbar"><div class="tab"><span class="ic">❯</span>terminal</div><span class="meta">type help()</span></div>
-    <div id="out" aria-live="polite"></div>
-    <form class="prompt" id="form" autocomplete="off">
-      <span aria-hidden="true">&gt;&gt;&gt;</span>
-      <input id="cmd" aria-label="Python command" placeholder="help()" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="send">
-    </form>
-    <div class="chips" id="chips"></div>
-  </section>
 </main>
 
 <footer class="status">
-  <span>⎇ main</span><span>● allie.py</span><span>✓ 0 problems</span><span class="r">🐍 python 3.12</span><span>♥ loved: ∞</span>
+  <span>⎇ main</span><span>● bouquet3d.py</span><span>✓ 0 problems</span><span class="r">🐍 python 3.12</span><span>♥ loved: ∞</span>
 </footer>
 
 <script>
@@ -173,9 +103,6 @@ const $ = id => document.getElementById(id);
 const TAU = Math.PI * 2;
 const rnd = (a, b) => a + Math.random() * (b - a);
 const pickOne = a => a[Math.random() * a.length | 0];
-const clamp01 = x => x < 0 ? 0 : x > 1 ? 1 : x;
-const ease = x => 1 - (1 - x) ** 3;
-const easeBack = x => 1 + 2.4 * (x - 1) ** 3 + 1.4 * (x - 1) ** 2;
 const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
 const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t);
 const norm = v => { const l = Math.hypot(...v) || 1; return v.map(x => x / l); };
@@ -419,437 +346,6 @@ function onScreen(el, cb) { new IntersectionObserver(([e]) => cb(e.isIntersectin
   setTimeout(() => say('tap a flower ♥'), reduce ? 0 : 2400);
   requestAnimationFrame(frame);
 })();
-
-/* ================= allie.py (types itself out) ================= */
-const SOURCE = `# allie.py — a tiny program about my favorite person
-# run it and see what happens 🌿
-
-from love import forever
-from garden import wildflowers
-
-
-class Allie:
-    favorite_color = "green"
-    snacks = ["almonds (holy moly)", "three musketeers", "cottage cheese"]
-    ice_cream = ["half baked", "choc chip cookie dough", "brownie batter"]
-    red_bull = ["strawberry", "peach", "iced berry"]  # ranked. not up for debate
-    movies = ["alice in wonderland (2010)", "the aristocats", "the fox and the hound"]
-    drink = "vodka soda + lime"
-    soda = "SPRITE"
-    dinner = "ravioli"  # sushi is a snack, not a meal
-    breakfast = ["over easy eggs", "french toast"]
-    favorite_aunt = "amber"  # certified awesome
-
-    def __init__(self):
-        self.beautiful = True
-        self.loved = float("inf")
-
-    def smile(self):
-        return "my whole day, fixed"
-
-
-if __name__ == "__main__":
-    allie = Allie()
-    wildflowers.bloom(for_=allie, forever=True)
-`;
-
-const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-function highlight(src) {
-  return esc(src).replace(
-    /(#.*$)|("[^"\n]*"?)|\b(class|def|return|from|import|if|for|in|not|and|or|True|False|None)\b|\b(self)\b|\b(float|print|str|list)\b|\b(\d+(?:\.\d+)?)\b|\b([A-Za-z_]\w*)(?=\()/gm,
-    (m, c, s, k, se, b, n, f) =>
-      c ? `<span class="c">${c}</span>` : s ? `<span class="s">${s}</span>` : k ? `<span class="k">${k}</span>` :
-      se ? `<span class="se">${se}</span>` : b ? `<span class="b">${b}</span>` : n ? `<span class="n">${n}</span>` : `<span class="f">${f}</span>`);
-}
-
-(() => {
-  const code = $('src'), run = $('run'), hint = $('runhint');
-  $('gutter').textContent = Array.from({ length: SOURCE.split('\n').length }, (_, i) => i + 1).join('\n');
-  let n = 0, started = false;
-  const tick = () => {
-    if (n >= SOURCE.length) { code.innerHTML = highlight(SOURCE); run.classList.add('pulse'); hint.textContent = '# go on, press it'; return; }
-    n = Math.min(SOURCE.length, n + 4);
-    code.innerHTML = highlight(SOURCE.slice(0, n)) + '<span class="caret"></span>';
-    requestAnimationFrame(tick);
-  };
-  // start typing once she scrolls to it
-  onScreen($('code'), v => { if (v && !started) { started = true; if (reduce) n = SOURCE.length; tick(); } });
-  $('editor').addEventListener('click', () => { n = SOURCE.length; });
-  run.addEventListener('click', () => {
-    n = SOURCE.length; run.classList.remove('pulse'); hint.textContent = '# running… 🌱';
-    $('garden').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
-    setTimeout(() => { garden.bloom(garden.count() < 20 ? 30 : 10); garden.wind(); }, reduce ? 0 : 450);
-    setTimeout(() => hint.textContent = '# process finished with exit code ♥', 2500);
-  });
-})();
-
-/* ================= garden.py — an ASCII wildflower meadow ================= */
-const garden = (() => {
-  const cv = $('field'), toast = $('toast'), stats = $('gstats');
-  const FT = {
-    daisy:      { k: 12, lobe: .35, core: .34, ramp: '.:-=*', cols: [['#ffffff', '#94a3b8']], center: '#facc15' },
-    poppy:      { k: 5,  lobe: .18, core: .26, ramp: ':=+#%@', cols: [['#ff5a5a', '#9f1239'], ['#fb923c', '#b23a0c']], center: '#2a1a12' },
-    cosmos:     { k: 8,  lobe: .4,  core: .26, ramp: '.:=+*#', cols: [['#f9a8d4', '#be185d'], ['#e879f9', '#86198f'], ['#fbcfe8', '#db2777']], center: '#fde047' },
-    cornflower: { k: 14, lobe: .5,  core: .26, ramp: '.:+*', cols: [['#7cb4ff', '#1d4ed8'], ['#a5b4fc', '#4338ca']], center: '#1e3a8a' },
-    buttercup:  { k: 5,  lobe: .25, core: .3,  ramp: ':=o@', cols: [['#fde047', '#b7791f']], center: '#f97316' },
-    lavender:   { spike: true, cols: [['#d8c8ff', '#6d28d9'], ['#e3c2ff', '#7e22ce']] }
-  };
-  const TYPES = ['daisy', 'daisy', 'poppy', 'cosmos', 'cosmos', 'cornflower', 'buttercup', 'lavender', 'lavender'];
-  const STEM = ['#2f8a3e', '#3fa34d', '#58b85a'].map(hex);
-
-  let chars = [], colors = [], owner = [], grass = [], flowers = [], items = [], floaters = [], labels = [], flies = [], stars = [];
-  let ground = 0, t = 0, last = performance.now(), visible = false, started = false, gust = 0, gustDir = 1, picked = 0, toastTimer;
-  const ptr = { x: -1e4, y: -1e4, vx: 0, active: false, down: null };
-
-  const g = charCanvas(cv, W => Math.max(9, Math.min(13, W / 60)), () => {
-    const n = g.cols * g.rows;
-    chars = new Array(n); colors = new Array(n); owner = new Array(n);
-    ground = Math.round(g.rows * 0.36);
-    grass = Array.from({ length: Math.round(g.cols * (g.rows - ground) * 0.16) }, () => {
-      const depth = Math.random() ** 0.85;
-      return { grass: true, fx: Math.random(), depth, h: 1 + (Math.random() * (1 + depth * 2.2) | 0), phase: rnd(0, TAU), a: 0, va: 0,
-               tip: pickOne([',', "'", '"', '|', '`', '.']), col: `hsl(${rnd(95, 140) | 0} ${rnd(45, 70) | 0}% ${(12 + depth * 20 + rnd(0, 8)) | 0}%)` };
-    });
-    stars = Array.from({ length: Math.round(g.cols * ground / 14) }, () => ({ c: Math.random() * g.cols | 0, r: Math.random() * (ground - 1) | 0, ph: rnd(0, TAU), ch: pickOne('..·*+') }));
-    flies = Array.from({ length: Math.max(6, g.cols / 7 | 0) }, () => ({ x: Math.random() * g.cols, y: rnd(ground * 0.5, g.rows - 2), vx: 0, vy: 0, ph: rnd(0, TAU) }));
-    sortItems();
-  });
-
-  const sortItems = () => { items = grass.concat(flowers).sort((a, b) => a.depth - b.depth); };
-  const updateStats = () => { stats.textContent = `flowers: ${flowers.length} · picked: ${picked}`; };
-  const baseRow = depth => ground + 1 + depth * (g.rows - 3 - ground);
-  const scaleOf = depth => 0.55 + 0.7 * depth;
-
-  function set(c, r, ch, col, own) {
-    c = Math.round(c); r = Math.round(r);
-    if (c < 0 || r < 0 || c >= g.cols || r >= g.rows) return;
-    const k = r * g.cols + c; chars[k] = ch; colors[k] = col; owner[k] = own || null;
-  }
-
-  function addFlower(fx, depth, delay = 0) {
-    const type = pickOne(TYPES), T = FT[type], [light, dark] = pickOne(T.cols);
-    const f = { type, fx, depth, light: hex(light), dark: hex(dark), center: T.center && hex(T.center),
-                h: rnd(5, 13), rx: type === 'buttercup' ? rnd(2.2, 2.8) : rnd(3, 4.4), rot: rnd(0, TAU),
-                born: t + delay, phase: rnd(0, TAU), a: rnd(-0.1, 0.1), va: 0, stem: pickOne(STEM), leaf: Math.random() < 0.7 ? pickOne([-1, 1]) : 0 };
-    flowers.push(f);
-    if (flowers.length > 160) flowers.shift();   // keep it smooth on phones
-    return f;
-  }
-  function bloom(n) {
-    started = true;
-    for (let i = 0; i < n; i++) addFlower(Math.random(), Math.random() ** 0.7, reduce ? 0 : i * 0.05);
-    sortItems(); updateStats();
-  }
-
-  // stems/grass sway, get pushed by the pointer, and ride the gust wave
-  function physics(it, xc, yr, reachRows) {
-    const x = xc * g.cw, y = yr * g.ch, reach = reachRows * g.ch;
-    const wave = gust * gustDir * 0.55 * (0.6 + 0.4 * Math.sin(t * 4 - x * 0.02));
-    const target = Math.sin(t * 0.7 + x * 0.004) * 0.06 + Math.sin(t * 1.9 + it.phase) * 0.03 + wave;
-    if (ptr.active) {
-      const dx = x - ptr.x, dy = y - reach * 0.6 - ptr.y, R = 90 + reach * 0.4, d2 = dx * dx + dy * dy;
-      if (d2 < R * R) it.va += ptr.vx * 0.0012 * (1 - d2 / (R * R));
-    }
-    it.va += (target - it.a) * 0.035; it.va *= 0.9; it.a += it.va;
-    it.a = Math.max(-1.1, Math.min(1.1, it.a));
-  }
-
-  function drawHead(f, cx, cy, sc, dim, own) {
-    const T = FT[f.type];
-    if (T.spike) {   // lavender: a little purple spike
-      const n = Math.max(1, Math.round((3 + f.h * 0.4) * sc));
-      for (let i = 0; i < n; i++) {
-        const c = mix(f.dark, f.light, 0.35 + 0.65 * (i / n)), col = css(c[0] * dim, c[1] * dim, c[2] * dim);
-        set(cx - 0.5, cy - i, i % 2 ? '%' : '@', col, own);
-        if (i < n - 1) set(cx + 0.5, cy - i, i % 2 ? '@' : '8', col, own);
-      }
-      return;
-    }
-    const rx = f.rx * sc, ry = rx * 0.57;
-    if (rx < 0.7) { set(cx, cy, '.', css(f.light[0] * dim, f.light[1] * dim, f.light[2] * dim), own); return; }
-    for (let r = Math.floor(cy - ry - 1); r <= Math.ceil(cy + ry + 1); r++) for (let c = Math.floor(cx - rx - 1); c <= Math.ceil(cx + rx + 1); c++) {
-      const dx = (c - cx) / rx, dy = (r - cy) / ry, d = Math.hypot(dx, dy);
-      if (d > 1 - T.lobe * Math.abs(Math.sin(T.k * (Math.atan2(dy, dx) + f.rot) / 2))) continue;
-      if (d < T.core) { set(c, r, d < T.core * 0.5 ? '@' : 'o', css(f.center[0] * dim, f.center[1] * dim, f.center[2] * dim), own); continue; }
-      const shade = clamp01(1.05 - d * 0.6 - (dx + dy) * 0.22), col = mix(f.dark, f.light, shade);
-      set(c, r, T.ramp[Math.min(T.ramp.length - 1, shade * T.ramp.length | 0)], css(col[0] * dim, col[1] * dim, col[2] * dim), own);
-    }
-  }
-
-  function drawFlower(f) {
-    const gr = clamp01((t - f.born) / 1.4); if (gr <= 0) return;
-    const s = scaleOf(f.depth), bc = f.fx * g.cols, br = baseRow(f.depth);
-    const hh = Math.max(1, Math.round(f.h * s * ease(gr)));
-    physics(f, bc, br, hh);
-    const stemCol = css(...f.stem.map(v => v * (0.6 + 0.4 * f.depth)));
-    let prev = 0, top = bc;
-    for (let k = 1; k <= hh; k++) {
-      const off = f.a * k * k / hh * 1.4, d = off - prev; prev = off; top = bc + off;
-      set(top, br - k, d > 0.4 ? '/' : d < -0.4 ? '\\' : '|', stemCol);
-      if (f.leaf && k === Math.max(1, Math.round(hh * 0.4))) set(top + f.leaf, br - k, f.leaf > 0 ? '>' : '<', css(70, 170, 80));
-    }
-    const sc = s * easeBack(clamp01((gr - 0.45) / 0.55));
-    f.hc = top; f.hr = br - hh - (FT[f.type].spike ? 0 : f.rx * sc * 0.4); f.sc = sc;
-    if (sc > 0.02) drawHead(f, f.hc, f.hr, sc, 1, f);
-  }
-
-  function drawBlade(b) {
-    const x = b.fx * g.cols, y = baseRow(b.depth), h = started ? b.h : 1;
-    physics(b, x, y, h);
-    for (let k = 0; k < h; k++) {
-      const ch = k === h - 1 ? (b.a > 0.22 ? '/' : b.a < -0.22 ? '\\' : b.tip) : (b.a > 0.35 ? '/' : b.a < -0.35 ? '\\' : '|');
-      set(x + b.a * k * 1.4, y - k, ch, b.col);
-    }
-  }
-
-  function frame(now) {
-    const dt = Math.min(0.05, (now - last) / 1000); last = now;
-    requestAnimationFrame(frame);
-    if (!visible || !g.cols) return;
-    t += dt; gust *= 0.985; ptr.vx *= 0.85;
-    chars.fill(''); owner.fill(null);
-    const { ctx, cols, rows } = g;
-
-    for (const s of stars) { const a = 0.2 + 0.55 * Math.abs(Math.sin(t * 0.8 + s.ph)); set(s.c, s.r, s.ch, css(220 * a, 240 * a, 230 * a)); }
-    // crescent moon
-    const mc = cols - 9, mr = 3.2;
-    for (let r = 0; r < 7; r++) for (let c = mc - 5; c <= mc + 5; c++) {
-      const d1 = Math.hypot((c - mc) / 3.4, (r - mr) / 1.95), d2 = Math.hypot((c - mc - 1.6) / 3.1, (r - mr + 0.4) / 1.8);
-      if (d1 < 1 && d2 > 1) set(c, r, d1 < 0.75 ? '#' : '*', css(255, 247, 200));
-    }
-    // horizon line
-    for (let c = 0; c < cols; c++) set(c, ground + Math.round(Math.sin(c * 0.09) * 0.6), Math.sin(c * 0.5 + t * 0.4) > 0.3 ? '~' : '_', css(40, 110, 60));
-
-    for (const it of items) it.grass ? drawBlade(it) : drawFlower(it);
-
-    for (const f of flies) {
-      f.vx += rnd(-0.02, 0.02) + gust * gustDir * 0.01; f.vy += rnd(-0.015, 0.015); f.vx *= 0.97; f.vy *= 0.97;
-      f.x = (f.x + f.vx + cols) % cols; f.y = Math.max(ground * 0.4, Math.min(rows - 2, f.y + f.vy));
-      const a = Math.max(0, Math.sin(t * 1.6 + f.ph));
-      if (a > 0.15) set(f.x, f.y, a > 0.7 ? '*' : '·', css(217 * (0.4 + 0.6 * a), 249 * (0.4 + 0.6 * a), 120 * a));
-    }
-    for (let i = floaters.length - 1; i >= 0; i--) {   // picked flowers drift up and fade
-      const p = floaters[i];
-      p.life -= dt * 0.45; if (p.life <= 0) { floaters.splice(i, 1); continue; }
-      p.cy -= dt * 6; p.cx += Math.sin(t * 3 + p.ph) * 0.08;
-      drawHead(p.f, p.cx, p.cy, p.sc * (1 + (1 - p.life) * 0.5), p.life);
-    }
-    for (let i = labels.length - 1; i >= 0; i--) {
-      const l = labels[i]; l.life -= dt * 0.6; if (l.life <= 0) { labels.splice(i, 1); continue; }
-      const r = l.r - (1 - l.life) * 3, c0 = l.c - l.text.length / 2;
-      for (let j = 0; j < l.text.length; j++) if (l.text[j] !== ' ') set(c0 + j, r, l.text[j], css(74 * l.life, 222 * l.life, 128 * l.life));
-    }
-
-    ctx.fillStyle = '#050907'; ctx.fillRect(0, 0, g.W, g.H);
-    ctx.font = g.font;
-    for (let k = 0; k < chars.length; k++) if (chars[k]) g.text(k % cols, k / cols | 0, chars[k], colors[k]);
-  }
-
-  function showToast(text) {
-    toast.innerHTML = '';
-    const a = document.createElement('div'); a.className = 'p'; a.textContent = '>>> garden.pick()';
-    const b = document.createElement('div'); b.className = 's'; b.textContent = `'${text}'`;
-    toast.append(a, b); toast.classList.add('show');
-    clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 5000);
-  }
-
-  function pick(f) {
-    f = f || flowers.filter(x => t - x.born > 1.4 && x.hc != null).sort(() => Math.random() - 0.5)[0];
-    if (!f) return null;
-    flowers.splice(flowers.indexOf(f), 1); sortItems();
-    floaters.push({ f, cx: f.hc, cy: f.hr, sc: f.sc, life: 1, ph: rnd(0, TAU) });
-    picked++; updateStats();
-    const note = nextNote(); showToast(note);
-    setTimeout(() => { addFlower(Math.random(), Math.random() ** 0.7); sortItems(); updateStats(); }, 2500);   // the meadow grows back
-    return note;
-  }
-
-  function plantAt(c, r) {
-    const depth = r <= ground ? rnd(0, 0.25) : clamp01((r - ground - 1) / (g.rows - 3 - ground));
-    const f = addFlower(clamp01(c / g.cols), depth);
-    sortItems(); updateStats();
-    labels.push({ text: `+ Flower("${f.type}")`, c, r: Math.min(r, baseRow(depth) - 2), life: 1 });
-  }
-
-  const pos = e => { const r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
-  cv.addEventListener('pointermove', e => {
-    const [x, y] = pos(e);
-    if (e.pointerType === 'mouse' || ptr.down) { if (ptr.active) ptr.vx = x - ptr.x; ptr.active = true; }
-    ptr.x = x; ptr.y = y;
-  });
-  cv.addEventListener('pointerdown', e => { const [x, y] = pos(e); ptr.down = { x, y }; ptr.x = x; ptr.y = y; ptr.active = true; ptr.vx = 0; });
-  cv.addEventListener('pointerup', e => {
-    const [x, y] = pos(e), d = ptr.down; ptr.down = null;
-    if (e.pointerType !== 'mouse') ptr.active = false;
-    if (!d || Math.hypot(x - d.x, y - d.y) > 12) return;
-    const c0 = Math.floor(x / g.cw), r0 = Math.floor(y / g.ch);
-    let f = null;
-    for (let dr = -1; dr <= 1 && !f; dr++) for (let dc = -1; dc <= 1 && !f; dc++) {
-      const r = r0 + dr, c = c0 + dc;
-      if (r >= 0 && c >= 0 && r < g.rows && c < g.cols) f = owner[r * g.cols + c];
-    }
-    started = true;
-    f ? pick(f) : plantAt(c0, r0);
-  });
-  cv.addEventListener('pointercancel', () => { ptr.down = null; ptr.active = false; });
-  cv.addEventListener('pointerleave', () => { ptr.active = false; });
-
-  onScreen(cv, v => {
-    visible = v;
-    if (v && !started) { started = true; setTimeout(() => bloom(30), 700); }
-  });
-  requestAnimationFrame(frame);
-
-  return {
-    bloom,
-    wind() { gust = 1; gustDir = Math.random() < 0.5 ? -1 : 1; },
-    pick,
-    clear() { flowers = []; sortItems(); updateStats(); },
-    count: () => flowers.length
-  };
-})();
-
-/* ================= terminal ================= */
-(() => {
-  const out = $('out'), input = $('cmd'), history = [];
-  let hIdx = 0;
-  const print = (text, cls = 'o') => { const d = document.createElement('div'); d.className = cls; d.textContent = text; out.append(d); out.scrollTop = out.scrollHeight; };
-  const repr = s => s.includes("'") ? `"${s}"` : `'${s}'`;
-
-  const ZEN = `The Zen of Allie
-================
-Green is better than every other color.
-Almonds are better than most things. Holy moly.
-Ravioli is a complete dinner.
-Sushi is a snack, not a dinner.
-Over easy is the only way.
-Bacon should never be extra crispy.
-Cucumbers are not welcome here.
-A mixed drink beats a beer.
-Strawberry > peach > iced berry.
-A handwritten note beats a text.
-Half Baked is a food group.
-You are loved. This is not up for debate.`;
-
-  const cmds = {
-    help: () => [`commands (or just tap the chips below):
-
-  favorites()      the essentials
-  snack()          a snack, chosen by science
-  dinner()         what's for dinner
-  breakfast()      the correct breakfast
-  dessert()        ice cream, ranked
-  drinks()         official beverage policy
-  redbull.rank()   the rankings
-  movie_night()    pick tonight's movie
-  dislikes()       banned from this website
-  amber()          favorite aunt status
-  note()           a little note from me
-  why()            why I love you
-  allie.smile()    what your smile does
-  plant(10)        plant flowers in the garden
-  wind()           make it windy
-  pick()           pick a flower
-  import this      the zen of allie
-  clear()          clear the screen`, 'dim'],
-    favorites: () => `{
-  'color':     'green',
-  'snack':     'almonds (holy moly)',
-  'candy':     'three musketeers',
-  'dinner':    'ravioli',
-  'breakfast': 'over easy eggs + french toast',
-  'dessert':   'half baked',
-  'drink':     'vodka soda + lime',
-  'soda':      'SPRITE',
-  'red_bull':  'strawberry',
-  'movie':     'alice in wonderland (2010)',
-  'aunt':      'amber',
-  'letters':   'yes. always.',
-}`,
-    snack: () => [repr(pickOne(['almonds. holy moly. almonds.', 'three musketeers 🍫', 'cottage cheese (respect)', 'a pint of half baked, no spoon sharing', 'almonds again, obviously', 'a strawberry red bull + almonds combo'])), 'str'],
-    dinner: () => `${repr(pickOne(['ravioli', 'ravioli (correct answer)', 'ravioli, extra sauce']))}
-# she's not picky… but sushi() is a snack, not a dinner 🍣`,
-    breakfast: () => `eggs:   over easy 🍳
-side:   french toast
-bacon:  yes — but NOT extra crispy`,
-    dessert: () => `1. half baked 🍪
-2. chocolate chip cookie dough
-3. brownie batter`,
-    drinks: () => `go-to:   vodka soda w/ lime 🍸
-soda:    diet dr pepper — no wait — SPRITEEE
-beer:    rejected
-canned:  meh. make it a mixed drink`,
-    redbull: () => `🥇 strawberry
-🥈 peach
-🥉 iced berry`,
-    movie_night: () => pickOne([
-      "tonight: alice in wonderland (2010) 🐇 — curiouser and curiouser",
-      "tonight: the aristocats 🐈 — tiny fancy cats",
-      "tonight: the fox and the hound 🦊🐶 — best friends forever"]) + "\nsnacks: almonds, obviously",
-    dislikes: () => [`cucumber                ✗ banned
-red hot chili peppers   ✗ banned
-extra crispy bacon      ✗ banned
-beer                    ✗ banned
-sushi for dinner        ✗ banned (snack only)`, 'err'],
-    amber: () => [`aunt_amber.status = "AWESOME" ✓`, 'ok'],
-    note: () => [repr(pickOne(NOTES)), 'str'],
-    why: () => `reasons = [
-  'the way you laugh',
-  "you're kind to everyone",
-  'you make me want to be better',
-  'you love little notes (so I made you a whole website)',
-  "you're beautiful. like, unfairly.",
-  "you're you. that's the whole list honestly.",
-]`,
-    smile: () => [repr('my whole day, fixed'), 'str'],
-    allie: () => `<Allie favorite_color='green' beautiful=True loved=inf>`,
-    plant: a => { const n = Math.max(1, Math.min(60, parseInt(a) || 10)); garden.bloom(n); return [`planted ${n} wildflowers 🌼  (↑ check the garden)`, 'ok']; },
-    wind: () => { garden.wind(); return [`whoosh 🍃  (↑ look at the garden)`, 'ok']; },
-    pick: () => { const n = garden.pick(); return n ? [repr(n), 'str'] : ['the garden is empty — try plant()', 'err']; },
-    clear_garden: () => { garden.clear(); return ['garden cleared. tap it to plant new ones 🌱', 'ok']; },
-    sushi: () => ['SnackError: sushi is a snack, not a filling meal 🍣', 'err'],
-    cucumber: () => ['ValueError: cucumber is not allowed on this website', 'err'],
-    almonds: () => ['holy moly. almonds. 🥜🥜🥜', 'ok'],
-    green: () => ['#4ade80  ← the best color, scientifically', 'ok'],
-    whoami: () => ['allie — the prettiest girl on the internet', 'ok'],
-    exit: () => ["nice try. you're stuck with me ♥", 'err'],
-    clear: () => { out.textContent = ''; return null; }
-  };
-  const alias = {
-    'redbull.rank': 'redbull', 'red_bull': 'redbull', 'allie.red_bull': 'redbull', 'movie': 'movie_night', 'movies': 'movie_night',
-    'write_me_a_note': 'note', 'love': 'note', 'why_i_love_you': 'why', 'quit': 'exit', 'allie.smile': 'smile',
-    'garden.bloom': 'plant', 'garden.wind': 'wind', 'garden.pick': 'pick', 'garden.clear': 'clear_garden', 'ice_cream': 'dessert',
-    'allie.favorite_color': 'green', 'color': 'green', 'food': 'dinner', 'eat': 'dinner', 'drink': 'drinks', 'aunt': 'amber'
-  };
-
-  function exec(raw) {
-    const src = raw.trim(); if (!src) return;
-    print(src, 'in'); history.push(src); hIdx = history.length;
-    if (/^import\s+this$/.test(src)) return print(ZEN, 'ok');
-    if (/^import\s+love$/.test(src)) return print('loaded module love (size: ∞, no exceptions)', 'ok');
-    if (/^sudo\b/.test(src)) return print('[sudo] you already have root access to my heart', 'ok');
-    const pr = src.match(/^print\((.*)\)$/); if (pr) return print(pr[1].replace(/^["']|["']$/g, ''));
-    const m = src.match(/^([A-Za-z_][\w.]*)\s*(?:\((.*)\))?$/);
-    const name = m && m[1].toLowerCase(), fn = m && (cmds[name] || cmds[alias[name]]);
-    if (!fn) return print(`NameError: name '${src.split(/[\s(]/)[0]}' is not defined\n# hint: try help() — or just tell me you love me`, 'err');
-    const r = fn(m[2]);
-    if (r != null) Array.isArray(r) ? print(r[0], r[1]) : print(r);
-  }
-
-  $('form').addEventListener('submit', e => { e.preventDefault(); exec(input.value); input.value = ''; });
-  input.addEventListener('keydown', e => {
-    if (e.key === 'ArrowUp' && hIdx > 0) { input.value = history[--hIdx]; e.preventDefault(); }
-    if (e.key === 'ArrowDown') { hIdx = Math.min(history.length, hIdx + 1); input.value = history[hIdx] || ''; e.preventDefault(); }
-  });
-  ['help()', 'favorites()', 'note()', 'why()', 'snack()', 'dinner()', 'dessert()', 'drinks()', 'redbull.rank()', 'movie_night()', 'breakfast()', 'dislikes()', 'amber()', 'allie.smile()', 'import this', 'plant(10)', 'wind()', 'clear()']
-    .forEach(c => { const b = document.createElement('button'); b.className = 'chip'; b.textContent = c; b.onclick = () => exec(c); $('chips').append(b); });
-  document.querySelectorAll('[data-cmd]').forEach(b => b.addEventListener('click', () => exec(b.dataset.cmd)));
-
-  print('Python 3.12.0 (allie edition) on wildflowers', 'dim');
-  print('Type "help()" for commands, or tap the chips below 👇', 'dim');
-  console.assert(Object.values(alias).every(k => cmds[k]), 'every alias points at a real command');
-})();
-
 </script>
 </body>
 </html>
