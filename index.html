@@ -89,7 +89,7 @@
 
   <section class="win" id="bouquet">
     <div class="wbar mac"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="wtitle">~/allie — <b>python bouquet3d.py</b> — <span id="bqsize"></span></div></div>
-    <div class="bq"><canvas id="bq" tabindex="0" aria-label="A spinning 3D bouquet drawn in text characters. Tap a flower, or press Enter, for a message. Drag sideways to spin it."></canvas></div>
+    <div class="bq"><canvas id="bq" tabindex="0" aria-label="A spinning 3D bouquet drawn in text characters. Tap a flower, or press Enter, to make it bloom. Drag sideways to spin it."></canvas></div>
     <div class="foot"><span id="bqline" aria-live="polite"></span><span class="for">for allie ♥</span></div>
   </section>
 </main>
@@ -117,26 +117,6 @@ function css(r, g, b) {
   let s = cssCache.get(k); if (!s) cssCache.set(k, s = `rgb(${r},${g},${b})`);
   return s;
 }
-
-// ✏️ the sweet stuff that pops up when she picks a flower
-const NOTES = [
-  "you're the most beautiful person I know, inside and out",
-  "I love you more than every wildflower in the world",
-  "my favorite place is anywhere next to you",
-  "you make every ordinary day feel like spring",
-  "your smile is my favorite thing. ever.",
-  "I'm so lucky I get to love you",
-  "every day with you is my new favorite day",
-  "you, me, a pint of half baked and a movie. perfect night.",
-  "I'd pick you. every time, in every lifetime.",
-  "thank you for being exactly, perfectly you",
-  "I'd give you every almond in the world",
-  "you deserve every strawberry red bull in existence",
-  "you're my favorite notification",
-  "being loved by you is the best thing that ever happened to me"
-];
-let noteIdx = 0;
-const nextNote = () => NOTES[noteIdx++ % NOTES.length];
 
 /* A canvas that draws a grid of monospace characters, sized to its box. */
 function charCanvas(cv, fsFor, onResize) {
@@ -317,7 +297,7 @@ function onScreen(el, cb) { new IntersectionObserver(([e]) => cb(e.isIntersectin
   function burst(x, y, n) {
     for (let i = 0; i < n; i++) particles.push({ x, y, vx: rnd(-80, 80), vy: rnd(-180, -60), life: rnd(1, 1.8), ch: '♥♥*+'[i % 4], c: ['#ff4fa3', '#ff8fc7', '#ffd23f', '#ffffff'][i % 4] });
   }
-  function pick(i, x, y) { pulseAt[i] = performance.now(); burst(x, y, 10); say(nextNote()); }
+  function pick(i, x, y) { pulseAt[i] = performance.now(); burst(x, y, 10); }
 
   function tap(x, y) {
     const c0 = Math.floor(x / g.cw), r0 = Math.floor(y / g.ch);
@@ -339,7 +319,7 @@ function onScreen(el, cb) { new IntersectionObserver(([e]) => cb(e.isIntersectin
   cv.addEventListener('pointercancel', () => { drag.on = false; });
   cv.addEventListener('keydown', e => {
     if (e.key !== 'Enter' && e.key !== ' ') return;
-    e.preventDefault(); pick(noteIdx % heads.length, g.W / 2, g.H * 0.35);
+    e.preventDefault(); pick(Math.random() * heads.length | 0, g.W / 2, g.H * 0.35);
   });
 
   onScreen(cv, v => visible = v);
